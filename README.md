@@ -5,4 +5,5 @@ This program is a slot machine using JavaScript. It is still very early in devel
 ## Next steps:
 
 1.) Design an HTML page using CSS
+
 2.) Connect the wheel spin logic with the winning/losing logic
