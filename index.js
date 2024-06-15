@@ -3,8 +3,8 @@
 
 
 // Define variables
-const prompt = require("prompt-sync")();
-const wheel = ["🍪","🍩","🍌","🍒","🍄","🌼","🧋"]
+//const prompt = require("prompt-sync")();
+const wheel = ["🍪","🍩","🍌","🍒"]
 const wheelSize = 3
 let money = 0
 
@@ -47,7 +47,7 @@ function bet(lines, money){
 
 // Returns a random emoji, used to represent the wheel
 function wheelspin(){
-    return wheel[Math.floor(Math.random() * 7)]
+    return wheel[Math.floor(Math.random() * wheel.length)]
 }
 
 // Created 3 emojis, and also addes true or false to the array, depending if all the emojis match
@@ -68,35 +68,51 @@ function spinWheel(){
     let wheelLineOne = wheelLine()
     let wheelLineTwo = wheelLine()
     let wheelLineThree = wheelLine()
+    console.log("Clicked")
+    document.getElementById("top").innerHTML = wheelLineOne[0] + wheelLineOne[1] + wheelLineOne[2]
 
+    document.getElementById("middle").innerHTML = wheelLineTwo[0] + wheelLineTwo[1] + wheelLineTwo[2]
+    document.getElementById("bottom").innerHTML = wheelLineThree[0] + wheelLineThree[1] + wheelLineThree[2]
+    
     for (let index = 0; index < wheelSize; index++) {
-        process.stdout.write(wheelLineOne[index]);
+        //process.stdout.write(wheelLineOne[index]);
     }
     console.log();
-  
+    
     for (let index = 0; index < wheelSize; index++) {
-        process.stdout.write(wheelLineTwo[index]);
+        //process.stdout.write(wheelLineTwo[index]);
     }
     console.log();
 
     for (let index = 0; index < wheelSize; index++) {
-        process.stdout.write(wheelLineThree[index]);
+        //process.stdout.write(wheelLineThree[index]);
     }
     console.log();
 
     if (wheelLineOne[3] == true || wheelLineTwo[3] == true ||  wheelLineThree[3] == true){
         console.log("Congratulations you are a winner!")
+        document.body.style.backgroundColor = "green"
+        } else{
+        document.body.style.backgroundColor = "lightcoral"
+
     }
 }
 
+
+function test(){
+    console.log("test");
+}
+
+function playGame(){
 // Game loop
-while (true) {
-    let again = prompt("Would you like to spin the wheel (Y/y): ")
+//while (true) {
+    //let again = prompt("Would you like to spin the wheel (Y/y): ")
     
-    if (again === "y" || again === "Y") {
+    //if (again === "y" || again === "Y") {
         spinWheel()
-    }
-    else{
-        return
-    }
+    //}
+    //else{
+      //  return
+    //}
+//}
 }
