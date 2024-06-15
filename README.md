@@ -14,4 +14,4 @@ This program is a slot machine using JavaScript. It is still very early in devel
 
 5.) Accept user input for amout of cash to bet on each line
 
-6. Update the webpage to be presentable
+6.) Update the webpage to be presentable
